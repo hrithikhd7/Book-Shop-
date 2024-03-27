@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
@@ -23,8 +22,8 @@ const Header = () => {
   );
 
   return (
-    <div className="navbar bg-base-100">
-      <div className="navbar-start">
+    <div className="navbar bg-base-100 flex md:flex-row flex-col gap-y-4 md:justify-around">
+      <div className="navbar-start w-auto ">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
@@ -49,16 +48,16 @@ const Header = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">BOOK WORM</a>
+        <a className="text-4xl font-extrabold">BOOK WORM</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
-      <div className="navbar-end flex gap-2">
-        <a className="btn bg-green-600 rounded-lg text-white w-28 h-14">
+      <div className="navbar-end flex gap-2 md:w-[230px]">
+        <a className="btn btn-sm bg-green-600 rounded-lg text-white md:btn-lg">
           Sign In
         </a>
-        <a className="btn bg-teal-300 rounded-lg text-white w-28 h-14">
+        <a className="btn btn-sm bg-teal-300 rounded-lg text-white md:btn-lg">
           Sign Up
         </a>
       </div>

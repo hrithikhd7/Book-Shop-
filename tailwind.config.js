@@ -3,7 +3,7 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      fontFamily: { primary: ["Work-Sans"] },
+      fontFamily: { primary: ["Work Sans"], secondary: ["Playfair Display"] },
     },
   },
   plugins: [require("daisyui")],
