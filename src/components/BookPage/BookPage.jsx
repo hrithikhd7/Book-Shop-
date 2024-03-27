@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
 const BookPage = ({ books }) => {
-  const { id, image, author, bookName, category, rating, tags } = books;
+  const { bookId, image, author, bookName, category, rating, tags } = books;
 
   return (
-    <Link to={`/books/${id}`}>
+    <Link to={`/books/${bookId}`}>
       <div className="card w-full bg-base-100 shadow-xl items-center py-6 ">
         <img src={image} className="rounded-xl w-[250px] h-[300px]" />
         <div className="flex gap-4 my-4">
@@ -16,7 +16,9 @@ const BookPage = ({ books }) => {
           </div>
         </div>
         <div className=" mx-4 mb-4">
-          <div className="text-neutral-900 text-2xl font-bold ">{bookName}</div>
+          <div className="text-neutral-900 text-2xl font-bold font-secondary ">
+            {bookName}
+          </div>
           <div className="text-center text-neutral-900 text-opacity-80 text-base font-medium ">
             By : {author}
           </div>
