@@ -1,6 +1,12 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { Toaster, toast } from "sonner";
-import { saveReadBooks } from "../Utility/localstorage";
+import {
+  getStoredReadBooks,
+  saveReadBooks,
+  getStoredWishListBooks,
+  saveWishListBooks,
+} from "../Utility/localstorage";
+import { useState } from "react";
 
 const BookDetails = () => {
   const books = useLoaderData();
@@ -10,9 +16,29 @@ const BookDetails = () => {
   const book = books.find((book) => book.bookId === idInt);
   console.log(book);
 
+  const [addedBooks, setAddedBooks] = useState(getStoredReadBooks());
+  const [wishList, setWishList] = useState(getStoredWishListBooks());
+
   const handleReadList = () => {
-    saveReadBooks(idInt);
-    toast.success("Book Added To The Reading List");
+    if (addedBooks.includes(idInt)) {
+      toast.error("Book is already added to the Read list!");
+    } else {
+      saveReadBooks(idInt);
+      setAddedBooks([addedBooks, idInt]);
+      toast.success("Book is added to the Read List");
+    }
+  };
+
+  const handleWishList = () => {
+    if (addedBooks.includes(idInt)) {
+      toast.error("Book is already added to the Read list");
+    } else if (wishList.includes(idInt)) {
+      toast.error("Book is already in the Wish List!");
+    } else {
+      saveWishListBooks(idInt);
+      setWishList([wishList, idInt]);
+      toast.success("Book is added to the Wish List!");
+    }
   };
 
   return (
@@ -62,7 +88,12 @@ const BookDetails = () => {
           >
             Read
           </button>
-          <button className="btn  bg-teal-400 text-white">Wishlist</button>
+          <button
+            onClick={handleWishList}
+            className="btn  bg-teal-400 text-white"
+          >
+            Wishlist
+          </button>
         </div>
       </div>
     </div>

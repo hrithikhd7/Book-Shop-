@@ -1,23 +1,28 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import { getStoredReadBooks } from "../Utility/localstorage";
+import {
+  getStoredReadBooks,
+  getStoredWishListBooks,
+} from "../Utility/localstorage";
 import StoredBooks from "../StoredBooks/StoredBooks";
 
 const Lists = () => {
   const books = useLoaderData();
 
-  const [booksRead, setbooksRead] = useState([]);
+  const [booksRead, setBooksRead] = useState([]);
+  const [wishList, setWishList] = useState([]);
 
   useEffect(() => {
-    const storedBookId = getStoredReadBooks();
-    if (books.length > 0) {
-      const NewBook = books.filter((book) =>
-        storedBookId.includes(book.bookId)
-      );
-      console.log(NewBook);
-      setbooksRead(NewBook);
-      console.log(booksRead);
-    }
+    const storedReadBookIds = getStoredReadBooks();
+    const readBooks = books.filter((book) =>
+      storedReadBookIds.includes(book.bookId)
+    );
+    setBooksRead(readBooks);
+    const storedWishListBookIds = getStoredWishListBooks();
+    const wishListBooks = books.filter((book) =>
+      storedWishListBookIds.includes(book.bookId)
+    );
+    setWishList(wishListBooks);
   }, []);
 
   return (
@@ -50,36 +55,44 @@ const Lists = () => {
           </ul>
         </div>
       </div>
-      <div role="tablist" className="tabs tabs-lifted">
-        <input
-          type="radio"
-          name="my_tabs_2"
-          role="tab"
-          className="tab"
-          aria-label="Read Books"
-          checked
-        />
-        <div
-          role="tabpanel"
-          className="tab-content bg-base-100 border-base-300 rounded-box p-6 flex flex-col gap-6"
-        >
-          {booksRead.map((books) => (
-            <StoredBooks key={books.bookId} books={books}></StoredBooks>
-          ))}
-        </div>
+      <div>
+        <div role="tablist" className="tabs tabs-lifted">
+          <input
+            type="radio"
+            name="my_tabs_2"
+            role="tab"
+            className="tab"
+            aria-label="Read Lists"
+            checked
+          />
+          <div
+            role="tabpanel"
+            className="tab-content bg-base-100 border-base-300 rounded-box p-6"
+          >
+            {booksRead.map((books) => (
+              <div className="my-4" key={books.bookId}>
+                <StoredBooks books={books}></StoredBooks>
+              </div>
+            ))}
+          </div>
 
-        <input
-          type="radio"
-          name="my_tabs_2"
-          role="tab"
-          className="tab"
-          aria-label="Wishlist Books"
-        />
-        <div
-          role="tabpanel"
-          className="tab-content bg-base-100 border-base-300 rounded-box p-6 flex flex-col gap-4"
-        >
-          Tab content 2
+          <input
+            type="radio"
+            name="my_tabs_2"
+            role="tab"
+            className="tab"
+            aria-label="Wishlists"
+          />
+          <div
+            role="tabpanel"
+            className="tab-content bg-base-100 border-base-300 rounded-box p-6"
+          >
+            {wishList.map((books) => (
+              <div className="my-4" key={books.bookId}>
+                <StoredBooks books={books}></StoredBooks>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
