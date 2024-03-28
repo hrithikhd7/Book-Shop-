@@ -10,6 +10,7 @@ import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import Error from "./components/Error/Error";
 import BookDetails from "./components/BookDetails/BookDetails";
+import { Toaster } from "sonner";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
       {
         path: "/lists",
         element: <Lists></Lists>,
+        loader: () => fetch("/bookcards.json"),
       },
       {
         path: "/read",
@@ -49,6 +51,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    <Toaster richColors position="top-right" />
     <RouterProvider router={router} />
   </React.StrictMode>
 );

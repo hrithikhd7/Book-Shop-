@@ -1,4 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { Toaster, toast } from "sonner";
+import { saveReadBooks } from "../Utility/localstorage";
 
 const BookDetails = () => {
   const books = useLoaderData();
@@ -7,6 +9,12 @@ const BookDetails = () => {
 
   const book = books.find((book) => book.bookId === idInt);
   console.log(book);
+
+  const handleReadList = () => {
+    saveReadBooks(idInt);
+    toast.success("You Have Applied Successfully");
+  };
+
   return (
     <div className="card lg:card-side bg-base-100 shadow-xl">
       <figure className="w-full p-4 bg-neutral-900 bg-opacity-5">
@@ -48,7 +56,10 @@ const BookDetails = () => {
         </div>
 
         <div className="card-actions justify-start">
-          <button className="btn bg-transparent border-1 border-neutral-300">
+          <button
+            onClick={handleReadList}
+            className="btn bg-transparent border-1 border-neutral-300"
+          >
             Read
           </button>
           <button className="btn  bg-teal-400 text-white">Wishlist</button>

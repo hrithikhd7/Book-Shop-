@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useEffect } from "react";
 import BookPage from "../BookPage/BookPage";
 
@@ -12,6 +12,9 @@ const Home = () => {
   }, []);
   console.log(books);
 
+  const ref = useRef(null);
+  const doClick = () => ref.current?.scrollIntoView({ behavior: "smooth" });
+
   return (
     <div className="text-center ">
       <div className="w-full h-full bg-neutral-900 bg-opacity-5 rounded-3xl md:flex justify-between items-center md:px-32 p-4 ">
@@ -19,7 +22,10 @@ const Home = () => {
           <div className=" text-neutral-900 md:text-6xl font-bold text-4xl font-secondary">
             Books to freshen <br /> up your bookshelf
           </div>
-          <div className="btn md:w-48 md:h-16 md:px-7 md:py-5 bg-green-600 rounded-lg justify-center items-center gap-2.5 inline-flex">
+          <div
+            onClick={doClick}
+            className="btn md:w-48 md:h-16 md:px-7 md:py-5 bg-green-600 rounded-lg justify-center items-center gap-2.5 inline-flex"
+          >
             <div className="text-center text-white text-xl font-bold font-primary">
               View The List
             </div>
@@ -30,7 +36,7 @@ const Home = () => {
       <div className="text-neutral-900 text-[40px] font-bold font-secondary my-24">
         <h1>Books</h1>
       </div>
-      <div className="grid md:grid-cols-3 gap-16">
+      <div ref={ref} className="grid md:grid-cols-3 gap-16">
         {books.map((books) => (
           <BookPage key={books.BookId} books={books}></BookPage>
         ))}

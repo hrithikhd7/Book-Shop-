@@ -1,4 +1,24 @@
+import { useEffect, useState } from "react";
+import { useLoaderData } from "react-router-dom";
+import { getStoredReadBooks } from "../Utility/localstorage";
+
 const Lists = () => {
+  const books = useLoaderData();
+
+  const [storedBookId, setstoredBookId] = useState([]);
+
+  useEffect(() => {
+    const storedBookId = getStoredReadBooks();
+    if (books.length > 0) {
+      const booksRead = books.filter((book) =>
+        storedBookId.includes(book.bookId)
+      );
+      console.log(booksRead);
+    }
+
+    setstoredBookId(storedBookId);
+  }, []);
+
   return (
     <div>
       <div className="flex flex-col items-center gap-10">
@@ -40,9 +60,7 @@ const Lists = () => {
         <div
           role="tabpanel"
           className="tab-content bg-base-100 border-base-300 rounded-box p-6"
-        >
-          Tab content 1
-        </div>
+        ></div>
 
         <input
           type="radio"
