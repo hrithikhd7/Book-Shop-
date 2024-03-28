@@ -1,22 +1,23 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { getStoredReadBooks } from "../Utility/localstorage";
+import StoredBooks from "../StoredBooks/StoredBooks";
 
 const Lists = () => {
   const books = useLoaderData();
 
-  const [storedBookId, setstoredBookId] = useState([]);
+  const [booksRead, setbooksRead] = useState([]);
 
   useEffect(() => {
     const storedBookId = getStoredReadBooks();
     if (books.length > 0) {
-      const booksRead = books.filter((book) =>
+      const NewBook = books.filter((book) =>
         storedBookId.includes(book.bookId)
       );
+      console.log(NewBook);
+      setbooksRead(NewBook);
       console.log(booksRead);
     }
-
-    setstoredBookId(storedBookId);
   }, []);
 
   return (
@@ -56,11 +57,16 @@ const Lists = () => {
           role="tab"
           className="tab"
           aria-label="Read Books"
+          checked
         />
         <div
           role="tabpanel"
-          className="tab-content bg-base-100 border-base-300 rounded-box p-6"
-        ></div>
+          className="tab-content bg-base-100 border-base-300 rounded-box p-6 flex flex-col gap-6"
+        >
+          {booksRead.map((books) => (
+            <StoredBooks key={books.bookId} books={books}></StoredBooks>
+          ))}
+        </div>
 
         <input
           type="radio"
@@ -68,11 +74,10 @@ const Lists = () => {
           role="tab"
           className="tab"
           aria-label="Wishlist Books"
-          checked
         />
         <div
           role="tabpanel"
-          className="tab-content bg-base-100 border-base-300 rounded-box p-6"
+          className="tab-content bg-base-100 border-base-300 rounded-box p-6 flex flex-col gap-4"
         >
           Tab content 2
         </div>

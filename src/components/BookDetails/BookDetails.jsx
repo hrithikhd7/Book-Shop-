@@ -12,7 +12,7 @@ const BookDetails = () => {
 
   const handleReadList = () => {
     saveReadBooks(idInt);
-    toast.success("You Have Applied Successfully");
+    toast.success("Book Added To The Reading List");
   };
 
   return (
