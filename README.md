@@ -1,8 +1,23 @@
 # B9A8-Book-Review
 
-## [ Private Repo Link](https://classroom.github.com/a/3k0P1rCt)
+github link: https://github.com/hrithikhd7
+project github link: https://github.com/programming-hero-web-course-4/b9a8-book-vibe-hrithikhd7
 
-Click here for the private repo: [https://classroom.github.com/a/3k0P1rCt](https://classroom.github.com/a/3k0P1rCt)
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+BOOK WORM WEBSITE FEATURES AND FUNCTIONALITIES:
+
+The Website provides an homepage where it displays multiple books an user can choose from.
+
+On Clicking a Book, the user will be able to view the details of the book.
+
+The User will have options to add the books to a section "Wish List" and "Read List".
+
+If the user adds the book in the "Read List", they will be unable to add them in the "Wish List".
+
+The user is also provided with a page where they can view the total number of pages to read from the books added in the Read List.
+
+The Website provided two pages where one contains the Most Books Sold and the other contains Contact Information.
 
 All the Links for the Images:
 

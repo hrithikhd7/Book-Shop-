@@ -9,10 +9,12 @@ const BookPage = ({ books }) => {
         <img src={image} className="rounded-xl w-[250px] h-[300px]" />
         <div className="flex gap-4 my-4">
           <div className="w-[125px] h-[33px] px-4 py-[7px] bg-green-600 bg-opacity-5 rounded-[30px] justify-center items-center gap-2.5 inline-flex">
-            <div className="text-center text-green-600 text-base font-medium "></div>
-          </div>
-          <div className="w-[93px] h-[33px] px-4 py-[7px] bg-green-600 bg-opacity-5 rounded-[30px] justify-center items-center gap-2.5 inline-flex">
-            <div className="text-center text-green-600 text-base font-medium "></div>
+            {tags.map((tags, index) => (
+              <ul>
+                <li>{tags}</li>
+              </ul>
+            ))}
+            ;
           </div>
         </div>
         <div className=" mx-4 mb-4">
