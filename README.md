@@ -2,7 +2,7 @@
 
 GitHub Link: [hrithikhd7](https://github.com/hrithikhd7)
 
-Project GitHub Link: [Book Vibe](https://github.com/programming-hero-web-course-4/b9a8-book-vibe-hrithikhd7)
+Project GitHub Repo-Link: [Book Vibe](https://github.com/programming-hero-web-course-4/b9a8-book-vibe-hrithikhd7)
 
 Live Website Link: [Book Vibe](https://imminent-sister.surge.sh/)
 
