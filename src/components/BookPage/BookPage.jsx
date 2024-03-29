@@ -8,14 +8,11 @@ const BookPage = ({ books }) => {
       <div className="card w-full bg-base-100 shadow-xl items-center py-6 ">
         <img src={image} className="rounded-xl w-[250px] h-[300px]" />
         <div className="flex gap-4 my-4">
-          <div className="w-[125px] h-[33px] px-4 py-[7px] bg-green-600 bg-opacity-5 rounded-[30px] justify-center items-center gap-2.5 inline-flex">
-            {tags.map((tags, index) => (
-              <ul>
-                <li>{tags}</li>
-              </ul>
-            ))}
-            ;
-          </div>
+          {tags.map((tags, index) => (
+            <div className="px-4 py-[7px] bg-green-600 bg-opacity-5 rounded-[30px] justify-center items-center gap-2.5">
+              {tags}
+            </div>
+          ))}
         </div>
         <div className=" mx-4 mb-4">
           <div className="text-neutral-900 text-2xl font-bold font-secondary ">
@@ -34,7 +31,7 @@ const BookPage = ({ books }) => {
             <div className="text-center text-neutral-900 text-opacity-80 text-base font-medium ">
               {rating}
             </div>
-            <img src="/public/star.png" />
+            <img src="/star.png" />
           </div>
         </div>
       </div>

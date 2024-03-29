@@ -8,7 +8,7 @@
     "totalPages": 180,
     "rating": 4.5,
     "category": "Classic Literature",
-    "tags": ["Romance", "Tragedy", "Roaring Twenties"],
+    "tags": ["Romance", "Tragedy"],
     "publisher": "Charles Scribner's Sons",
     "yearOfPublishing": 1925
   },
@@ -21,7 +21,7 @@
     "totalPages": 281,
     "rating": 4.8,
     "category": "Fiction",
-    "tags": ["Social Issues", "Coming of Age", "Legal Drama"],
+    "tags": ["Social Issues", "Coming of Age"],
     "publisher": "J. B. Lippincott & Co.",
     "yearOfPublishing": 1960
   },
@@ -34,7 +34,7 @@
     "totalPages": 328,
     "rating": 4.7,
     "category": "Dystopian Fiction",
-    "tags": ["Totalitarianism", "Surveillance", "Political Fiction"],
+    "tags": ["Totalitarianism", "Surveillance"],
     "publisher": "Secker & Warburg",
     "yearOfPublishing": 1949
   },
@@ -47,7 +47,7 @@
     "totalPages": 279,
     "rating": 4.6,
     "category": "Romance",
-    "tags": ["Regency Era", "Social Commentary", "Satire"],
+    "tags": ["Regency Era", "Social Commentary"],
     "publisher": "T. Egerton, Whitehall",
     "yearOfPublishing": 1813
   },
@@ -60,7 +60,7 @@
     "totalPages": 224,
     "rating": 4.4,
     "category": "Literary Fiction",
-    "tags": ["Adolescence", "Alienation", "Identity"],
+    "tags": ["Adolescence", "Alienation"],
     "publisher": "Little, Brown and Company",
     "yearOfPublishing": 1951
   },
@@ -73,7 +73,7 @@
     "totalPages": 320,
     "rating": 4.9,
     "category": "Fantasy",
-    "tags": ["Magic", "Adventure", "Friendship"],
+    "tags": ["Magic", "Adventure"],
     "publisher": "Bloomsbury Publishing",
     "yearOfPublishing": 1997
   },
@@ -86,7 +86,7 @@
     "totalPages": 310,
     "rating": 4.7,
     "category": "Fantasy",
-    "tags": ["Adventure", "Quest", "High Fantasy"],
+    "tags": ["Adventure", "Quest"],
     "publisher": "Allen & Unwin",
     "yearOfPublishing": 1937
   },
@@ -99,7 +99,7 @@
     "totalPages": 454,
     "rating": 4.3,
     "category": "Thriller",
-    "tags": ["Conspiracy", "Art", "Symbolism"],
+    "tags": ["Conspiracy", "Art"],
     "publisher": "Doubleday",
     "yearOfPublishing": 2003
   },
@@ -112,7 +112,7 @@
     "totalPages": 197,
     "rating": 4.6,
     "category": "Fiction",
-    "tags": ["Philosophical", "Journey", "Fable"],
+    "tags": ["Philosophical", "Journey"],
     "publisher": "HarperCollins",
     "yearOfPublishing": 1988
   }

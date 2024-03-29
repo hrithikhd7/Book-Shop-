@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { getStoredReadBooks } from "../Utility/localstorage";
 import { useLoaderData } from "react-router-dom";
 
-import { BarChart, Bar, XAxis, YAxis } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from "recharts";
 
 const getPath = (x, y, width, height) =>
   `M${x},${y + height}
@@ -39,19 +39,21 @@ const Read = () => {
   }));
 
   return (
-    <div className="flex flex-col items-center gap-20">
+    <div className="flex flex-col items-center gap-20 text-center">
       <h1 className="text-4xl font-bold">Total Pages to Read</h1>
-      <div className="flex justify-center items-center">
-        <BarChart width={1000} height={500} data={chartData}>
-          <XAxis className="font-bold text-xl" dataKey="bookName" />
-          <YAxis />
-          <Bar
-            className="font-bold text-2xl"
-            dataKey="totalPages"
-            fill="orange"
-            shape={<TriangleBar />}
-          />
-        </BarChart>
+      <div style={{ width: "100%", height: 500 }}>
+        <ResponsiveContainer>
+          <BarChart data={chartData}>
+            <XAxis className="" dataKey="bookName" />
+            <YAxis />
+            <Bar
+              className="font-bold text-2xl"
+              dataKey="totalPages"
+              fill="orange"
+              shape={<TriangleBar />}
+            />
+          </BarChart>
+        </ResponsiveContainer>
       </div>
     </div>
   );
