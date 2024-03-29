@@ -1,6 +1,7 @@
 import { CiLocationOn } from "react-icons/ci";
 import { GoPeople } from "react-icons/go";
 import { CiFileOn } from "react-icons/ci";
+import { Link } from "react-router-dom";
 
 const StoredBooks = ({ books }) => {
   const {
@@ -13,6 +14,7 @@ const StoredBooks = ({ books }) => {
     totalPages,
     tags,
     category,
+    bookId,
   } = books;
   return (
     <div>
@@ -51,11 +53,14 @@ const StoredBooks = ({ books }) => {
                 Rating: {rating}
               </div>
             </div>
-            <div className=" p-3 bg-green-600  rounded-[30px] justify-center items-center  inline-flex">
+            <Link
+              to={`/books/${bookId}`}
+              className="btn p-3 bg-green-600  rounded-[30px] justify-center items-center  inline-flex"
+            >
               <div className="text-center text-white text-base ">
                 View Details
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </div>
